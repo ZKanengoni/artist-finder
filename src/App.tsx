@@ -1,10 +1,22 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 import './App.css';
+import SearchForm from './components/SearchForm';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      // cacheTime: Infinity,
+    },
+  },
+});
 
 function App() {
   return (
-    <>
-      <h1>Artist finder</h1>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <SearchForm />
+    </QueryClientProvider>
   );
 }
 
