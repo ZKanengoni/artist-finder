@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import fetchArtist from '../adapters/fetchArtist';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Container } from '@mui/material';
+
+import fetchArtist from '../adapters/fetchArtist';
 import Results from './Results';
 
 const SearchForm = () => {
