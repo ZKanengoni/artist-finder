@@ -1,5 +1,5 @@
 const fetchTopSongs = async (artistId: string = '1') => {
-  const apiRes = await fetch(`https://api.deezer.com/artist/${artistId}/top`);
+  const apiRes = await fetch(`/api/artist/${artistId}/top`);
 
   if (!apiRes.ok) {
     throw new Error(
