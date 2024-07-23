@@ -96,7 +96,7 @@ export interface ISong {
 }
 
 export interface IHeaderProps {
-  artist: IArtist | never[];
+  artist: IArtist;
 }
 
 export interface ITableProps {

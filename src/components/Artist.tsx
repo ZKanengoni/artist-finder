@@ -18,27 +18,31 @@ const Artist = () => {
 
   const isLoading = albums.isLoading && songs.isLoading && artist.isLoading;
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (!artist.data) {
+    return <h1>There was an issues fetching the artist. Please try again.</h1>;
+  }
+
   return (
     <div className='w-full h-full'>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <>
-          <Header artist={artist.data} />
+      <>
+        <Header artist={artist.data} />
 
-          <section className='w-full py-8 px-8'>
-            <h1 className='text-2xl font-bold mb-4'>Popular</h1>
-            <div className='popular w-full'>
-              <Table songs={songs.data} />
-            </div>
+        <section className='w-full py-8 px-8'>
+          <h1 className='text-2xl font-bold mb-4'>Popular</h1>
+          <div className='popular w-full'>
+            <Table songs={songs.data} />
+          </div>
 
-            <h1 className='text-2xl font-bold mb-4'>Albums</h1>
-            <div className='albums w-full'>
-              <Carousel albums={albums.data} />
-            </div>
-          </section>
-        </>
-      )}
+          <h1 className='text-2xl font-bold mb-4'>Albums</h1>
+          <div className='albums w-full'>
+            <Carousel albums={albums.data} />
+          </div>
+        </section>
+      </>
     </div>
   );
 };

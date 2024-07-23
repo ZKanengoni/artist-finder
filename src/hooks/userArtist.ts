@@ -8,5 +8,5 @@ export default function useArtist(id: string | undefined) {
     queryFn: () => fetchArtist(id || ''),
   });
 
-  return { data: results?.data ?? [], isLoading: results.isLoading };
+  return { data: results?.data, isLoading: results.isLoading };
 }
