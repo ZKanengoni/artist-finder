@@ -1,19 +1,14 @@
 import { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+
+import useArtists from '../hooks/useArtists';
 
 import Results from './Results';
 import Loader from './Loader';
-import fetchArtists from '../adapters/fetchArtists';
 
 const SearchForm = () => {
   const [artist, setArtist] = useState('');
 
-  const results = useQuery({
-    queryKey: ['search', artist],
-    queryFn: () => fetchArtists(artist),
-  });
-
-  const { data, isLoading } = results;
+  const { data, isLoading } = useArtists(artist);
 
   return (
     <>

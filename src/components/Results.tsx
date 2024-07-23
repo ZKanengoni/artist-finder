@@ -2,9 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { IResultProps } from '../interfaces/interfaces';
 
-const Results = ({ data }: IResultProps) => {
-  const artists = data?.data;
-
+const Results = ({ data: artists }: IResultProps) => {
   return (
     <div className=' container mx-auto p-4'>
       <h1 className=' text-2xl font-bold mb-4'>Artists</h1>

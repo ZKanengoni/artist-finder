@@ -39,10 +39,6 @@ export interface IArtistsResponse {
   total: number;
 }
 
-export interface IResultProps {
-  data: IArtistsResponse | undefined;
-}
-
 export interface IContributor {
   id: number;
   name: string;
@@ -109,4 +105,8 @@ export interface ITableProps {
 
 export interface ICarouselProps {
   albums: IAlbum[];
+}
+
+export interface IResultProps {
+  data: IArtist[];
 }
