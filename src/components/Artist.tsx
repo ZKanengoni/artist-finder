@@ -23,6 +23,7 @@ const Artist = () => {
   const songs = songsQuery.data;
 
   console.log(albums);
+  console.log(songs);
 
   return <div>Artsit {id}</div>;
 };
