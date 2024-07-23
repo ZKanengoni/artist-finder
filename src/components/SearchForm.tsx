@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-import fetchArtist from '../adapters/fetchArtist';
 import Results from './Results';
-import { Loader } from './Loader';
+import Loader from './Loader';
+import fetchArtists from '../adapters/fetchArtists';
 
 const SearchForm = () => {
   const [artist, setArtist] = useState('');
 
   const results = useQuery({
     queryKey: ['search', artist],
-    queryFn: () => fetchArtist(artist),
+    queryFn: () => fetchArtists(artist),
   });
 
   const { data, isLoading } = results;
 
   return (
     <>
-      <div className='container'>
+      <div className=' w-full'>
         <form
           className='flex justify-center flex-row py-2'
           onSubmit={(e) => {

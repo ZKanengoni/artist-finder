@@ -7,15 +7,21 @@ const Results = ({ data }: IResultProps) => {
 
   return (
     <div className=' container mx-auto p-4'>
+      <h1 className=' text-2xl font-bold mb-4'>Artists</h1>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'>
         {!artists?.length ? (
-          <h1 className='text-center'>No artists found</h1>
+          <h1 className='col-span-1 sm:col-span-2 lg:col-span-4 text-center w-fullr'>
+            No artists to display
+          </h1>
         ) : (
           artists.map((artist) => (
             <div className='card bg-base-100 w-80 rounded-none' key={artist.id}>
-              <Link to={`/artist/${artist.id}`}>
+              <Link
+                to={`/artist/${artist.name.replace(/\s+/g, '+')}/${artist.id}`}
+              >
                 <figure>
                   <img
+                    className='mask mask-circle'
                     src={artist.picture_big}
                     alt={`musical artist/band ${artist.name}`}
                   />

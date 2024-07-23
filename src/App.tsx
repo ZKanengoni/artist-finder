@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <Routes>
-          <Route path='/artist/:id' element={<Artist />} />
+          <Route path='/artist/:name/:id' element={<Artist />} />
           <Route path='/' element={<SearchForm />} />
         </Routes>
       </QueryClientProvider>
