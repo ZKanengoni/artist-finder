@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+
 import { IResultProps } from '../interfaces/interfaces';
+import { formatNumber } from '../utils/utility';
 
 const Results = ({ data: artists }: IResultProps) => {
   return (
@@ -13,7 +15,7 @@ const Results = ({ data: artists }: IResultProps) => {
         ) : (
           artists.map((artist) => (
             <div
-              className='card bg-base-100 w-full rounded-none'
+              className='card bg-base-100 w-full p-4 rounded-md hover:bg-[#2b3540] transition-all'
               key={artist.id}
             >
               <Link
@@ -28,7 +30,7 @@ const Results = ({ data: artists }: IResultProps) => {
                 </figure>
                 <div className='card-body'>
                   <h2 className='card-title'>{artist.name}</h2>
-                  <p>fans {artist.nb_fan}</p>
+                  <p>{formatNumber(artist.nb_fan)} fans</p>
                 </div>
               </Link>
             </div>
