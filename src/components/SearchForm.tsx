@@ -1,37 +1,32 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import useArtists from '../hooks/useArtists';
 
 import Results from './Results';
 import Loader from './Loader';
+import useDebounce from '../hooks/useDebounce';
 
 const SearchForm = () => {
   const [artist, setArtist] = useState('');
 
-  const { data, isLoading } = useArtists(artist);
+  const debouncedArtist = useDebounce(artist, 500);
+  const { data, isLoading } = useArtists(debouncedArtist);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setArtist(e.target.value);
+  };
 
   return (
     <>
       <div className=' w-full'>
-        <form
-          className='flex justify-center flex-row py-2'
-          onSubmit={(e) => {
-            e.preventDefault();
-
-            const form = e.target as HTMLFormElement;
-            const formData = new FormData(form);
-
-            const artistValue = formData.get('artist') as string;
-
-            setArtist(artistValue);
-          }}
-        >
+        <form className='flex justify-center flex-row py-2'>
           <label className='input input-bordered flex items-center gap-2 rounded-none'>
             <input
               type='text'
               className='grow'
               placeholder='Enter artist name'
               name='artist'
+              onChange={(e) => handleChange(e)}
             />
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -46,10 +41,6 @@ const SearchForm = () => {
               />
             </svg>
           </label>
-
-          <button className='btn btn-neutral mx-2 rounded-none' type='submit'>
-            Search
-          </button>
         </form>
       </div>
 
