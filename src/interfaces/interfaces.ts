@@ -110,3 +110,7 @@ export interface ICarouselProps {
 export interface IResultProps {
   data: IArtist[];
 }
+
+export interface IRecentArtistProps {
+  id: string;
+}

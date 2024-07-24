@@ -31,14 +31,14 @@ const Artist = () => {
       <>
         <Header artist={artist.data} />
 
-        <section className='w-full py-8 px-8'>
-          <h1 className='text-2xl font-bold mb-4'>Popular</h1>
-          <div className='popular w-full'>
+        <section className='w-full px-8 py-8'>
+          <h1 className='mb-4 text-2xl font-bold'>Popular</h1>
+          <div className='w-full popular'>
             <Table songs={songs.data} />
           </div>
 
-          <h1 className='text-2xl font-bold mb-4'>Albums</h1>
-          <div className='albums w-full'>
+          <h1 className='mb-4 text-2xl font-bold'>Albums</h1>
+          <div className='w-full albums'>
             <Carousel albums={albums.data} />
           </div>
         </section>

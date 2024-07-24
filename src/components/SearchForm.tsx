@@ -5,6 +5,7 @@ import useArtists from '../hooks/useArtists';
 import Results from './Results';
 import Loader from './Loader';
 import useDebounce from '../hooks/useDebounce';
+import RecentSearch from './RecentSearch';
 
 const SearchForm = () => {
   const [artist, setArtist] = useState('');
@@ -42,6 +43,8 @@ const SearchForm = () => {
             </svg>
           </label>
         </form>
+
+        <RecentSearch />
       </div>
 
       {isLoading ? <Loader /> : <Results data={data} />}
