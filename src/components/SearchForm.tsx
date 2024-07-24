@@ -8,8 +8,8 @@ import useDebounce from '../hooks/useDebounce';
 
 const SearchForm = () => {
   const [artist, setArtist] = useState('');
-
   const debouncedArtist = useDebounce(artist, 500);
+
   const { data, isLoading } = useArtists(debouncedArtist);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -18,9 +18,9 @@ const SearchForm = () => {
 
   return (
     <>
-      <div className=' w-full'>
-        <form className='flex justify-center flex-row py-2'>
-          <label className='input input-bordered flex items-center gap-2 rounded-none'>
+      <div className='w-full '>
+        <form className='flex flex-row justify-center py-2'>
+          <label className='flex items-center gap-2 rounded-none input input-bordered'>
             <input
               type='text'
               className='grow'
@@ -32,7 +32,7 @@ const SearchForm = () => {
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 16 16'
               fill='currentColor'
-              className='h-4 w-4 opacity-70'
+              className='w-4 h-4 opacity-70'
             >
               <path
                 fillRule='evenodd'

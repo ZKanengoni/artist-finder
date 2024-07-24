@@ -7,6 +7,7 @@ const Header = ({ artist }: IHeaderProps) => {
   const { name, picture_xl, nb_fan } = artist;
 
   const navigate = useNavigate();
+
   const fanCount = formatNumber(nb_fan);
 
   return (
@@ -17,17 +18,17 @@ const Header = ({ artist }: IHeaderProps) => {
           backgroundImage: `url(${picture_xl})`,
         }}
       >
-        <div className='hero-overlay bg-opacity-50 absolute inset-0'></div>
+        <div className='absolute inset-0 bg-opacity-50 hero-overlay'></div>
 
         <button
-          className='btn btn-circle absolute top-4 left-4'
+          className='absolute btn btn-circle top-4 left-4'
           onClick={() => {
             navigate('/');
           }}
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            className='h-6 w-6'
+            className='w-6 h-6'
             fill='none'
             viewBox='0 0 24 24'
             stroke='currentColor'
@@ -42,7 +43,7 @@ const Header = ({ artist }: IHeaderProps) => {
         </button>
 
         <div className='absolute bottom-0 left-0 p-4 text-white'>
-          <h1 className='mb-5 text-7xl font-black'>{name}</h1>
+          <h1 className='mb-5 font-black text-7xl'>{name}</h1>
           <p>{fanCount} total fans</p>
         </div>
       </div>
