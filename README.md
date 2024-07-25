@@ -1,7 +1,6 @@
 # Artist Finder
 
-Artist Finder is a React + Vite app that uses the Deezer API to search and display artist information. Users can search for their favorite artists and view detailed information including top tracks, albums, and related artists.
-
+Artist Finder is a React + Vite app that uses the Deezer API to search and display artist information. Users can search for their favorite artists and view detailed information including top tracks and albums.
 ## How to Get the App Running
 
 To get the app running on your local machine, follow these steps:
