@@ -9,7 +9,7 @@ To get the app running on your local machine, follow these steps:
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/artist-finder.git
+    git clone https://github.com/ZKanengoni/artist-finder.git
     cd artist-finder
     ```
 
